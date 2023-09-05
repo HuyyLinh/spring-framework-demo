@@ -17,11 +17,13 @@ public class SpringMvcApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
-        PetStoreServiceImpl petStoreService = (PetStoreServiceImpl) context.getBean("petStore");
-        System.out.println(petStoreService.getAccountDao() );
-        System.out.println(petStoreService.getItemDao() );
-        System.out.println(petStoreService.name);
-//        SpringApplication.run(SpringMvcApplication.class, args);
+//      PetStoreServiceImpl petStoreService = (PetStoreServiceImpl) context.getBean("petStore");
+        PetStoreServiceImpl petStoreService1 = context.getBean("petStore",PetStoreServiceImpl.class);
+        System.out.println(petStoreService1.getAccountDao() );
+        System.out.println(petStoreService1.getItemDao() );
+        System.out.println(petStoreService1.name);
+
+//       SpringApplication.run(SpringMvcApplication.class, args);
     }
 
 }

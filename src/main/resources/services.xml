@@ -14,4 +14,31 @@
 
     <!-- more bean definitions for services go here -->
 
+    <!-- Static factory method demo    -->
+    <bean id="clientService"
+          class="com.example.springmvc.staticFactoryMethod.ClientService"
+          factory-method="createInstance"/>
+
+    <!--  Constructor arg-->
+    <bean id="beanOne" class="com.example.springmvc.constructorarg.ThingOne">
+        <constructor-arg ref="beanTwo"/>
+        <constructor-arg ref="beanThree"/>
+    </bean>
+
+    <bean id="beanTwo" class="com.example.springmvc.constructorarg.ThingTwo"/>
+
+    <bean id="beanThree" class="com.example.springmvc.constructorarg.ThingThree"/>
+    <bean id="exampleBean" class="com.example.springmvc.constructorarg.ExampleBean">
+        <constructor-arg type="int" value="7500000"/>
+        <constructor-arg type="java.lang.String" value="42"/>
+    </bean>
+
+    <!--Setter DI-->
+    <bean id="simpleMovieLister" class="com.example.springmvc.setterdi.SimpleMovieLister">
+        <property name="movieFinder" ref="movieFinder"/>
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+    <bean id="movieFinder" class="com.example.springmvc.setterdi.MovieFinder"/>
+
+
 </beans>
