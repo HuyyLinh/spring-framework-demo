@@ -1,5 +1,6 @@
 package com.example.springmvc;
 
+import com.example.springmvc.annotationconfig.MovieRecommender;
 import com.example.springmvc.jpetstore.services.PetStoreServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootTest
+//@SpringBootTest
 class SpringMvcApplicationTests {
     ApplicationContext context;
 
@@ -46,4 +47,5 @@ class SpringMvcApplicationTests {
     void testSetterDI(){
         System.out.println(context.getBean("simpleMovieLister"));
     }
+
 }
